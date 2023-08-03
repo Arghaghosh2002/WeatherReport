@@ -3,20 +3,26 @@
 let weather = {
     apiKey: "0d960b41acd16dd5b92a593fb9dc9ceb",
     fetchWeather: function (city) {
-      fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-          city +
-          "&units=metric&appid=" +
-          this.apiKey
-      )
-        .then((response) => {
-          if (!response.ok) {
-            alert("No weather found.");
-            throw new Error("No weather found.");
-          }
-          return response.json();
-        })
-        .then((data) => this.displayWeather(data));
+      if(city.trim().length===0){
+        alert("Please enter a valid City Name")
+      }
+      else{
+        fetch(
+          "https://api.openweathermap.org/data/2.5/weather?q=" +
+            city +
+            "&units=metric&appid=" +
+            this.apiKey
+        )
+          .then((response) => {
+            if (!response.ok) {
+              alert("No weather found.");
+              throw new Error("No weather found.");
+            }
+            return response.json();
+          })
+          .then((data) => this.displayWeather(data));
+      }
+      
     },
     displayWeather: function (data) {
       const { name } = data;
@@ -38,18 +44,12 @@ let weather = {
     },
     search: function () {
       const value = this.fetchWeather(document.querySelector(".search-bar").value);
-      console.log(value);
     },
   };
   
-  const button = document.getElementById("search-button")/*.addEventListener("click", function () {
-    //weather.search();
-    
-    console.log("JBFV");
-  })*/
-  console.log(button);
-  ;
-  
+  document.getElementById("search-button").addEventListener("click", function () {
+    weather.search();
+  })
   document
     .querySelector(".search-bar")
     .addEventListener("keyup", function (event) {

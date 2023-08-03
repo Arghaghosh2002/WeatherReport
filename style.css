@@ -56,6 +56,22 @@ body {
     font-size: 105%;
     width: calc(100% - 100px);
   }
+   
+  #search-button{
+    width: 25px;
+    height: 25px;
+    background-color: #7c7c7c2b;
+    padding: 0.5em;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  #search-button:hover {
+    background-color: rgb(83, 80, 80);
+  }
+  
+  
   
   button :hover{
     background: #7c7c7c6b;
@@ -73,7 +89,7 @@ body {
   
   .description {
     text-transform: capitalize;
-    margin-left: 8px;
+    
   }
   
   .weather.loading {
@@ -89,4 +105,9 @@ body {
     position: absolute;
     top: 0;
     left: 20px;
+  }
+  @media (max-width: 368px){
+    .city{
+      font-size: 16px;
+    }
   }
