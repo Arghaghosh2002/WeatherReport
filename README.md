@@ -4,7 +4,7 @@ https://arghaghosh2002.github.io/WeatherReport/
 
 ## Introduction
 
-Created a responsive website with HTML, CSS, and JavaScript. Incorporated WeatherAPI to fetch data and dynamically change background images based on user locations, enhancing usability and visual appeal.
+Created a responsive website with HTML, CSS, and JavaScript. By integrating the WeatherAPI, the site fetches data and dynamically change background images based on location, enhancing usability and visual appeal.
 ## Features
 
 - Real-time weather information
